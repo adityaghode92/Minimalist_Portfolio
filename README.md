@@ -11,6 +11,7 @@ This is a responsive portfolio site created with ReactJS and plain CSS that impl
 - Pagination
 - Contact Form
 - Scroll to Top
+- Dark Mode
 
 
 ## React-Icons
@@ -33,3 +34,7 @@ The slider component of the testimonial section is imported from [SwiperJS](http
 The form modal of the contact section is setup using SDK and an email template from [EmailJS](https://www.emailjs.com/docs/examples/reactjs/).
 
 ![Screenshot](./src/assets/emailjs.png)
+
+
+## Dark Mode Implemented 
+## Responsiveness

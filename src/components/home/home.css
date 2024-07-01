@@ -27,6 +27,7 @@
 .home__title {
     font-size: 3rem;
     margin-bottom: var(--mb-0-25);
+    color: var(--title-color);
 }
 
 .home__hand {
@@ -41,6 +42,7 @@
     padding-left: 5.4rem;
     font-weight: var(--font-normal);
     margin-bottom: var(--mb-1);
+    color: var(--title-color);
 }
 
 .home__subtitle::before {
@@ -56,6 +58,7 @@
 .home__description {
     max-width: 400px;
     margin-bottom: var(--mb-3);
+    color: var(--text-color);
 }
 
 .home__img {
@@ -116,6 +119,27 @@
     color: var(--title-color);
 }
 
+/* Dark mode styles */
+body.dark-mode .home__title,
+body.dark-mode .home__subtitle,
+body.dark-mode .home__description,
+body.dark-mode .home__scroll-name {
+    color: #e0e0e0; /* White color for dark mode */
+}
+
+body.dark-mode .home__social-icon {
+    color: #e0e0e0; /* White color for dark mode */
+}
+
+body.dark-mode .home__social-icon:hover {
+    color: #ff0000; /* Slightly lighter color on hover */
+}
+
+.home__scroll-arrow,
+.home__social-icon {
+    color: var(--title-color);
+}
+
 /* BREAK POINTS */
 @media screen and (max-width: 992px) {
     .home__content {
@@ -153,6 +177,7 @@
         margin-left: 7.5rem;
     }
 }
+
 @media screen and (max-width: 768px) {
     .home__content {
         grid-template-columns: 0.5fr 3fr;
@@ -175,6 +200,7 @@
         display: none;
     }
 }
+
 @media screen and (max-width: 350px) {
     .home__img {
         width: 180px;
@@ -186,3 +212,34 @@
         height: 22px;
     }
 }
+
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.header.dark-mode {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+.nav__list .nav__link.dark-mode {
+  color: #e0e0e0;
+}
+
+.home__title,
+.home__subtitle,
+.home__description,
+.home__scroll-name,
+.home__scroll-arrow {
+  color: var(--title-color);
+}
+
+
+/* Dark Mode Styles */
+body.dark-mode .home__scroll-arrow {
+    color: #e0e0e0; /* White color for dark mode */
+  }
+

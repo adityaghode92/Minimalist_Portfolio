@@ -1,86 +1,139 @@
+/* Projects Filter Styles */
 .project__filters {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 0.75rem;
     margin-bottom: var(--mb-2);
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+    padding: 0 0.5rem; /* Add horizontal padding to avoid edge issues */
 }
 
+/* Filter Item Styles */
 .project__item {
-    color: var(--title-color);
+    color: var(--title-color); /* Default text color */
     padding: 0.25rem 0.75rem;
-
     font-weight: var(--font-medium);
     border-radius: 0.5rem;
     text-transform: capitalize;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer; /* Add cursor pointer */
 }
 
+/* Hover Effect */
 .project__item:hover {
     background-color: var(--title-color);
     color: var(--container-color);
 }
 
-.project__container {
-    grid-template-columns: repeat(2, max-content);
-    gap: 3rem;
-    justify-content: center;
+/* Dark Mode Styles */
+body.dark-mode .project__item {
+    color: #fff; /* White text color for filter buttons in dark mode */
 }
 
-.project__card {
-    background-color: var(--container-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1.25rem;
-    border-radius: 1rem;
+body.dark-mode .project__item:hover {
+    background-color: #fff; /* White background color for hover effect in dark mode */
+    color: #000; /* Black text color for filter buttons in dark mode */
 }
 
-.project__img {
-    width: 295px;
-    border-radius: 1rem;
-    margin-bottom: var(--mb-1);
-    
-    
-}
-
-.video_Container {
-    filter: grayscale(100%);
-    transition: filter 0.3s ease, transform 0.3s ease; 
-  }
-  
-  .video_Container:hover {
-    filter: grayscale(0%);
-    transform: scale(1.05);
-  }
-
-.project__title {
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-medium);
-    margin-bottom: var(--mb-0-5);
-}
-
-.project__button {
-    color: var(--text-color);
-    font-size: var(--small-font-size);
-    display: flex;
-    align-items: center;
-    column-gap: 0.25rem;
-}
-
-.project__button-icon {
-    font-size: 1rem;
-    transition: 0.4s;
-}
-
-.project__button:hover .project__button-icon{
-    transform: translateX(0.25rem);
-}
-
-/* ACTIVE PROJECT */
+/* Active Filter Item Style */
 .active__project {
     background-color: var(--title-color);
     color: var(--container-color);
 }
 
-/* BREAK POINTS */
+/* Dark Mode Styles */
+body.dark-mode .active__project {
+    background-color: var(--primary-color-dark); /* Darker primary color for active button in dark mode */
+    color: #fff; /* White text color for active button in dark mode */
+}
+
+/* Project Container Styles */
+.project__container {
+    display: grid; /* Add display property */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 3rem;
+    justify-content: center;
+    padding: 0 1rem; /* Add horizontal padding to avoid edge issues */
+}
+
+/* Card Styles */
+.project__card {
+    background-color: var(--container-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.25rem;
+    border-radius: 1rem;
+    color: var(--title-color); /* Default text color */
+    max-width: 100%; /* Ensure it doesn’t exceed the container width */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+    text-align: center; /* Center-align text and video */
+}
+
+/* Project Image Styles */
+.project__vid {
+    width: 70%; /* Make image responsive */
+    border-radius: 1rem;
+    margin-bottom: var(--mb-1);
+    display: block; /* Ensure the video is a block element */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
+
+/* Video Container Styles */
+.video_Container {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease; 
+    margin: 0 auto; /* Center the video container */
+}
+
+.video_Container:hover {
+    filter: grayscale(0%); /* Grayscale filter on hover */
+}
+
+/* Dark Mode Styles */
+body.dark-mode .project__card {
+    background-color: #222; /* Dark background for project cards in dark mode */
+    border-color: rgba(255, 255, 255, 0.1); /* Light border for project cards in dark mode */
+    color: #fff; /* White text color for project cards in dark mode */
+}
+
+body.dark-mode .project__title {
+    color: #fff; /* White text color for project titles in dark mode */
+}
+
+body.dark-mode .project__button {
+    color: #d1d5db; /* Slightly off-white for button text in dark mode */
+}
+
+/* Button Styles */
+.project__buttons-container {
+    display: flex;
+    justify-content: space-between; /* Distribute buttons evenly */
+    margin-top: 23px;
+}
+
+.project__button {
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    padding: 0 1rem; /* Add padding to the buttons */
+}
+
+/* Button Icon Styles */
+.project__button-icon {
+    font-size: 1.3rem;
+    transition: 0.4s;
+}
+
+.project__button:hover .project__button-icon {
+    transform: translateX(0.25rem);
+}
+
+/* Media Queries for Responsiveness */
+
+/* When screen width is less than or equal to 992px */
 @media screen and (max-width: 992px) {
     .project__container {
         gap: 1.25rem;
@@ -90,7 +143,7 @@
         padding: 1rem;
     }
 
-    .project__img {
+    .project__vid {
         margin-bottom: 0.75rem;
     }
 
@@ -99,22 +152,34 @@
     }
 }
 
+/* When screen width is less than or equal to 768px */
 @media screen and (max-width: 768px) {
+    .project__filters {
+        flex-wrap: wrap; /* Wrap filters for smaller screens */
+        gap: 0.5rem; /* Reduce gap */
+    }
+
     .project__container {
-        grid-template-columns: max-content;
+        grid-template-columns: 1fr; /* Single column layout */
     }
 }
 
+/* When screen width is less than or equal to 576px */
 @media screen and (max-width: 576px) {
+    .project__filters {
+        padding: 0 0.25rem; /* Add extra padding for very small screens */
+    }
+
     .project__container {
         grid-template-columns: 1fr;
     }
 
-    .project__img {
+    .project__vid {
         width: 100%;
     }
 }
 
+/* When screen width is less than or equal to 350px */
 @media screen and (max-width: 350px) {
     .project__item {
         font-size: var(--small-font-size);
@@ -123,4 +188,13 @@
     .project__filters {
         column-gap: 0.25rem;
     }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .video_Container {
+    filter: grayscale(100%); /* Grayscale filter in dark mode */
+}
+
+body.dark-mode .video_Container:hover {
+    filter: grayscale(0%); /* Grayscale filter on hover in dark mode */
 }

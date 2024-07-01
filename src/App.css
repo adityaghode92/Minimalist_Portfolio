@@ -9,7 +9,7 @@
     --sat: 0%;
     --title-color: hsl(var(--hue), var(--sat), 20%);
     /* --title-color-dark: hsl(var(--hue), var(--sat), 0%); */
-    --title-color-dark: hsl(0, 100%, 50%);
+    --title-color-dark: red;
     --text-color: hsl(var(--hue), var(--sat), 46%);
     --body-color: hsl(var(--hue), var(--sat), 98%);
     --container-color: #fff;
@@ -196,3 +196,14 @@ img {
     }
 
 }
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  header.dark-mode {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+  }

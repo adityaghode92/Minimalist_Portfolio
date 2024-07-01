@@ -14,8 +14,8 @@ const Info = () => {
         <a href="#portfolio" >
         <div className="about__box">
             <HiOutlineTerminal className="about__icon" />
-            <h3 className="about__title">Completed</h3>
-            <span className="about__subtitle">3+ Projects</span>
+            <h3 className="about__title">Projects</h3>
+            <span className="about__subtitle">3+ Completed</span>
         </div>
         </a>
         <a href="https://leetcode.com/adityaghode92/" target="_blank" rel="noreferrer" >

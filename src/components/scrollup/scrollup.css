@@ -24,6 +24,20 @@
     bottom: 3rem;
 }
 
+/* Dark Mode Styles */
+body.dark-mode .scrollup {
+    background-color: #fff;  /* White background in dark mode */
+    opacity: 1;  /* Full opacity in dark mode */
+}
+
+body.dark-mode .scrollup__icon {
+    color: #000;  /* Black arrow in dark mode */
+}
+
+body.dark-mode .scrollup:hover {
+    background-color: #f44336;  /* Red background on hover in dark mode */
+}
+
 /* BREAK POINTS */
 @media screen and (max-width: 992px) {
    .scrollup {
@@ -40,7 +54,6 @@
     .show-scroll {
         bottom: 4rem;
     }
-  
 }
 
 @media screen and (max-width: 350px) {

@@ -1,95 +1,148 @@
+.about {
+  padding: 4rem 0;
+}
+
+.section__title {
+  color: var(--title-color); /* Default title color */
+}
+
+.section__subtitle {
+  color: var(--subtitle-color); /* Default subtitle color */
+}
+
 .about__container {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    column-gap: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 4rem;
 }
 
 .about__img {
-    width: 300px;
-    border-radius: 1.5rem;
-    justify-self: center;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 1.5rem;
+  justify-self: center;
 }
 
 .about__info {
-    grid-template-columns: repeat(3, 140px);
-    gap: 0.5rem;
-    margin-bottom: var(--mb-2);
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  gap: 0.5rem;
+  margin-bottom: var(--mb-2);
 }
 
 .about__box {
-    background-color: var(--container-color);
-    border: 1px solid rgba(0, 0, 0, 12);
-    border-radius: 0.75rem;
-    text-align: center;
-    padding: 1rem 1.25rem;
-    transition: transform 0.3s ease-in-out;
+  background-color: var(--container-color); /* Default background color */
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.75rem;
+  text-align: center;
+  padding: 1rem 1.25rem;
+  transition: transform 0.3s ease-in-out;
 }
 
 .about__box:hover {
-    transform: scale(0.90);
-  }
+  transform: scale(0.90);
+}
 
 .about__icon {
-    font-size: 1.5rem;
-    color: var(--title-color);
-    margin-bottom: var(--mb-0-5);
+  font-size: 1.5rem;
+  color: var(--title-color); /* Default icon color */
+  margin-bottom: var(--mb-0-5);
 }
 
 .about__title {
-    font-size: var(--small-font-size);
-    font-weight: var(--font-medium);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color); /* Default title color */
 }
 
 .about__subtitle {
-    font-size: var(--smaller-font-size);
+  font-size: var(--smaller-font-size);
+  color: var(--text-color); /* Default subtitle color */
 }
 
 .about__description {
-    padding: 0 4rem 0 0;
-    margin-bottom: var(--mb-2-5);
+  padding: 0 4rem 0 0;
+  margin-bottom: var(--mb-2-5);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .section__title {
+  color: #e0e0e0; /* White color for dark mode */
+}
+
+body.dark-mode .section__subtitle {
+  color: #b0b0b0; /* Slightly lighter subtitle color for dark mode */
+}
+
+body.dark-mode .about__info .about__box {
+  background-color: #000000; /* Black background for dark mode */
+  border: 1px solid rgba(255, 255, 255, 0.12); /* Slightly lighter border for dark mode */
+}
+
+body.dark-mode .about__info .about__icon {
+  color: #ffffff; /* White color for icons in dark mode */
+}
+
+body.dark-mode .about__info .about__title,
+body.dark-mode .about__info .about__subtitle {
+  color: #ffffff; /* White color for text in dark mode */
+}
+
+body.dark-mode .about__description {
+  color: #e0e0e0; /* White color for description in dark mode */
+}
+
+body.dark-mode .about__img {
+  box-shadow: inset 0 0 0 9px rgb(50 50 50 / 50%); /* Adjusted shadow for dark mode */
 }
 
 /* BREAK POINTS */
 @media screen and (max-width: 992px) {  
-    .about__container {
-        grid-template-columns: 1fr;
-        row-gap: 2.5rem;
-    }
+  .about__container {
+      grid-template-columns: 1fr;
+      row-gap: 2.5rem;
+  }
 
-    .about__img {
-        width: 220px;
-    }
+  .about__img {
+      width: 220px;
+      margin: 0 auto;
+  }
 
-    .about__box {
-        padding: 0.75rem 0.5rem;
-    }
+  .about__box {
+      padding: 0.75rem 0.5rem;
+  }
 
-    .about__data {
-        text-align: center;
-    }
+  .about__data {
+      text-align: center;
+  }
 
-    .about__info {
-        justify-content: center;
-    }
+  .about__info {
+      justify-content: center;
+  }
 
-    .about__description {
-        padding: 0 5rem;
-        margin-bottom: 2rem;
-    }
+  .about__description {
+      padding: 0 2rem;
+      margin-bottom: 2rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .about__info {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .about__info {
+      grid-template-columns: repeat(3, 1fr);
+  }
 
-    .about__description {
-        padding: 0;
-    }
+  .about__description {
+      padding: 0 1rem;
+  }
 }
 
 @media screen and (max-width: 350px) {
-   .about__info {
-    grid-template-columns: repeat(2, 1fr);
-   }
+  .about__info {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about__description {
+      padding: 0;
+  }
 }

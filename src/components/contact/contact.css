@@ -1,3 +1,4 @@
+/* Container Styles */
 .contact__container {
     grid-template-columns: repeat(2, max-content);
     justify-content: center;
@@ -5,6 +6,7 @@
     padding-bottom: 3rem;
 }
 
+/* Title Styles */
 .contact__title {
     text-align: center;
     font-size: var(--h3-font-size);
@@ -12,12 +14,14 @@
     margin-bottom: var(--mb-1-5);
 }
 
+/* Info Styles */
 .contact__info {
     display: grid;
     row-gap: 1rem;
     grid-template-columns: 300px;
 }
 
+/* Card Styles */
 .contact__card {
     background-color: var(--container-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -32,7 +36,8 @@
     margin-bottom: var(--mb-0-25);
 }
 
-.contact__card-title, .contact__card-data {
+.contact__card-title,
+.contact__card-data {
     font-size: var(--small-font-size);
 }
 
@@ -45,6 +50,7 @@
     margin-bottom: var(--mb-0-75);
 }
 
+/* Button Styles */
 .contact__button {
     color: var(--text-color);
     font-size: var(--small-font-size);
@@ -63,6 +69,7 @@
     transform: translate(0.25rem);
 }
 
+/* Form Styles */
 .contact__form {
     width: 360px;
 }
@@ -106,7 +113,33 @@
     resize: none;
 }
 
-/* BREAK POINTS */
+/* Dark Mode Styles */
+body.dark-mode .contact__card {
+    background-color: #333;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+body.dark-mode .contact__card-icon,
+body.dark-mode .contact__card-title,
+body.dark-mode .contact__card-data,
+body.dark-mode .contact__button,
+body.dark-mode .contact__title,
+body.dark-mode .contact__content h3.contact__title {
+    color: #fff;
+}
+
+body.dark-mode .contact__form-input {
+    background: none;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .contact__form-tag {
+    background-color: #333;
+}
+
+/* Break Points */
 @media screen and (max-width: 992px) {
     .contact__container {
         column-gap: 3rem;
@@ -126,7 +159,6 @@
     .contact__form {
         margin: 0 auto;
     }
-
 }
 
 @media screen and (max-width: 576px) {
@@ -137,7 +169,4 @@
     .contact__form {
         width: 100%;
     }
-}
-
-@media screen and (max-width: 350px) {
 }

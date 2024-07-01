@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { projectsData } from "./Data";
 import { projectsNav } from './Data';
 import ProjectItems from "./ProjectItems";
+import './projects.css'; // Ensure you import the CSS file
 
 const Projects = () => {
     const [item, setItem] =  useState({ name: "All" });
@@ -28,19 +29,21 @@ const Projects = () => {
     return (
         <div>
             <div className="project__filters">
-                {projectsNav.map((item,index) => {
+                {projectsNav.map((item, index) => {
                     return (
-                        <span onClick={(e) => {
-                            handleClick(e, index);
-                        }}
-                        className={`${active === index ? 'active-project' : ''} project__item`}
-                        key={index}>{item.name}</span>
+                        <span
+                            onClick={(e) => handleClick(e, index)}
+                            className={`${active === index ? 'active__project' : ''} project__item`}
+                            key={index}
+                        >
+                            {item.name}
+                        </span>
                     )
                 })}
             </div>
             <div className="project__container container grid">
                 {projects.map((item) => {
-                    return <ProjectItems item={item} key={item.id}/>
+                    return <ProjectItems item={item} key={item.id} />
                 })}
             </div>
         </div>

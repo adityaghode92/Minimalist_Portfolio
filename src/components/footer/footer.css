@@ -1,10 +1,18 @@
 .footer {
     background-color: var(--container-color);
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2rem 1rem; /* Added padding to ensure content is not touching the edges */
+    width: 100%; /* Ensure the footer spans the full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 .footer__container {
-    padding: 2rem 0 6rem;
+    max-width: 1200px; /* Add a max-width to prevent the footer from stretching too wide */
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all content horizontally */
+    gap: 2rem; /* Space between elements */
 }
 
 .footer__title, .footer__link {
@@ -16,15 +24,21 @@
     margin-bottom: var(--mb-2);
 }
 
+.footer__link {
+    transition: color 0.3s ease;
+}
+
 .footer__link:hover {
-    color: var(--title-color-dark);
+    color: red; /* Hover color set to red */
 }
 
 .footer__list {
     display: flex;
+    flex-direction: row; /* Default to horizontal alignment */
     justify-content: center;
     column-gap: 1.5rem;
     margin-bottom: var(--mb-2);
+    padding: 0; /* Remove any default padding */
 }
 
 .footer__social {
@@ -37,13 +51,38 @@
     background-color: var(--title-color);
     color: var(--container-color);
     font-size: 1.25rem;
-    padding: 04rem;
+    padding: 0.4rem;
     border-radius: 0.5rem;
     display: inline-flex;
 }
 
 .footer__social-link:hover {
     background-color: var(--title-color-dark);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .footer {
+    background-color: #222; /* Dark background for footer */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Light border for footer in dark mode */
+}
+
+body.dark-mode .footer__title,
+body.dark-mode .footer__link,
+body.dark-mode .footer__copy {
+    color: #fff; /* White text color for footer in dark mode */
+}
+
+body.dark-mode .footer__link:hover {
+    color: red; /* Red color for footer links on hover in dark mode */
+}
+
+body.dark-mode .footer__social-link {
+    background-color: #444; /* Darker background for social icons in dark mode */
+    color: #fff; /* White color for social icons in dark mode */
+}
+
+body.dark-mode .footer__social-link:hover {
+    background-color: #555; /* Slightly lighter background for social icons on hover in dark mode */
 }
 
 .footer__copy {
@@ -60,5 +99,40 @@
         padding: 0.25rem;
         border-radius: 0.25rem;
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer__list {
+        flex-direction: column; /* Stack links vertically */
+        row-gap: 1rem; /* Space between links */
+        align-items: center; /* Center the list items */
+    }
+
+    .footer__social {
+        column-gap: 0.75rem; /* Reduce space between social icons */
+    }
+
+    .footer__social-link {
+        font-size: 1.1rem; /* Slightly smaller icons */
+        padding: 0.3rem; /* Slightly reduced padding */
+    }
+
+    .footer__title {
+        margin-bottom: var(--mb-1); /* Adjust margin for smaller screens */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .footer__title {
+        font-size: var(--h4-font-size); /* Smaller font size for the title */
+    }
+
+    .footer__list {
+        margin-bottom: var(--mb-1); /* Adjust margin for smaller screens */
+    }
+
+    .footer__copy {
+        font-size: 0.8rem; /* Smaller font size for the copyright notice */
     }
 }
