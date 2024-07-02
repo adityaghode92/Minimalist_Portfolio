@@ -14,12 +14,6 @@ This is a responsive portfolio site created with ReactJS and plain CSS that impl
 - Dark Mode
 
 
-## React-Icons
-`npm install react-icons --save`
-
-The icons from this project can be found in the *Feather* or *Heroicon* sections of the [React-Icons](https://react-icons.github.io/react-icons/) library. 
-
-
 <!-- ## Slider Component
 `npm i swiper`
 
