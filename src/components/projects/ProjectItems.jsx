@@ -17,12 +17,11 @@ const ProjectItems = ({ item }) => {
       </div>
       <h3 className="project__title">{item.title}</h3>
       <div className="project__buttons-container">
-        <a href="#" className="project__button">
+        <a href={item.demo} className="project__button" target="_blank" rel="noopener noreferrer">
           Demo <HiOutlineArrowSmRight className="project__button-icon" />
         </a>
-        <a href="#" className="project__button">
-          Github <FaGithub className="project__button-icon" />{" "}
-          {/* GitHub icon */}
+        <a href={item.github} className="project__button" target="_blank" rel="noopener noreferrer">
+          Github <FaGithub className="project__button-icon" />
         </a>
       </div>
     </div>

@@ -12,12 +12,16 @@ export const projectsData = [
         video: Project1,
         title: "Food Ordering App",
         category: "A",
+        demo: "https://food-ordering-app-eta-brown.vercel.app/",
+        github: "https://github.com/adityaghode92/Food_Ordering_App"
     },
     {
         id: 2,
         video: Project2,
         title: "Netflix-GPT",
         category: "B",
+        demo: "https://netflix-gpt-black-seven.vercel.app",
+        github: "https://github.com/adityaghode92/netflix-gpt"
     },
     // {
     //     id: 3,
