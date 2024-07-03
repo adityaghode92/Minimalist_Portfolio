@@ -6,8 +6,7 @@ This is a responsive portfolio site created with ReactJS and plain CSS that impl
 - Responsive Layout
 - Fixed Navigation
 - Pop-up Modals
-- Tab Panels
-<!-- - Slider -->
+- Tab Panels<!-- - Slider -->
 - Pagination
 - Contact Form
 - Scroll to Top
